@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Light/Dark Theme Changer</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+        .theme-container{
+            background-color: tan;
+            width: fit-content;
+            border-radius: 5px;
+            height: 41px;
+            margin: 0 auto;
+        }
+        .theme-icon {
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .active {
+            background-color: #fff !important;
+            border: 1px solid black;
+            border-radius: 5px;
+
+        }
+
+        .dark {
+            background: #191919;
+            color: #fff;
+        }
+
+        .light {
+            color: #000;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body id="body" class="light">
+    <h2>Light/Dark Theme Changer</h2>
+    <div class="theme-container">
+        <img class="theme-icon" src="themes.png" alt="" id="img-dark" onclick="darkMode()" />
+        <img class="theme-icon" src="light-mode.png" alt="" id="img-light" onclick="lightMode()" class="active" />
+    </div>
+    
+    <script>
+        function darkMode() {
+            const imgDark = document.getElementById("img-dark");
+            const imgLight = document.getElementById("img-light");
+            const bodyElement = document.getElementById("body");
+
+            imgDark.classList.add("active");
+            imgLight.classList.remove("active");
+            bodyElement.className = "dark";
+        }
+
+        function lightMode() {
+            const imgDark = document.getElementById("img-dark");
+            const imgLight = document.getElementById("img-light");
+            const bodyElement = document.getElementById("body");
+
+            imgLight.classList.add("active");
+            imgDark.classList.remove("active");
+
+            bodyElement.className = "light";
+        }
+    </script>
+</body>
+
+</html>
